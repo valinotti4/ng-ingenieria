@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
+import { ContactForm } from "@/components/contact-form"
 import { Shield, Eye, Bell, Monitor, Smartphone, Award, Wrench, Phone, Mail, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -196,27 +196,7 @@ export default function SecurityLandingPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <h4 className="text-2xl font-bold text-slate-800 mb-6 text-center">Solicita tu Cotización</h4>
-              <form className="space-y-4">
-                <div>
-                  <Input placeholder="Nombre completo" className="h-12" />
-                </div>
-                <div>
-                  <Input placeholder="Teléfono" className="h-12" />
-                </div>
-                <div>
-                  <Input placeholder="Email" type="email" className="h-12" />
-                </div>
-                <div>
-                  <textarea
-                    placeholder="Describe tu proyecto de seguridad"
-                    className="w-full p-3 border border-gray-300 rounded-md resize-none h-24"
-                  />
-                </div>
-                <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-lg">Enviar Solicitud</Button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
