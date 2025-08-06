@@ -14,19 +14,25 @@ export async function POST(request: NextRequest) {
     }
 
     const transporter = nodemailer.createTransport({
-      // host: process.env.SMPT_HOST,
-      // port: process.env.SMPT_PORT,
-      service: process.env.SMPT_SERVICE,
+      host: process.env.SMPT_HOST,
+      port: parseInt(process.env.SMPT_PORT || "465"),
+      secure: true,
       auth: {
         user: process.env.SMPT_MAIL,
         pass: process.env.SMPT_APP_PASS,
+      },
+      authMethod: "PLAIN",
+      tls: {
+        rejectUnauthorized: false,
+        ciphers: "SSLv3",
       },
     });
 
     // Email to site owners
     const ownerMailOptions = {
-      from: process.env.GMAIL_USER,
-      to: "lupi.valinotti@gmail.com",
+      from: `"NG Ingeniería en Seguridad" <${process.env.SMPT_MAIL}>`,
+      replyTo: process.env.SMPT_MAIL,
+      to: "consultas@ng.com.ar",
       subject: `Nueva solicitud de cotización - ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -59,7 +65,8 @@ export async function POST(request: NextRequest) {
 
     // Email confirmation to customer
     const customerMailOptions = {
-      from: process.env.GMAIL_USER,
+      from: `"NG Ingeniería en Seguridad" <${process.env.SMPT_MAIL}>`,
+      replyTo: process.env.SMPT_MAIL,
       to: email,
       subject: "Confirmación de solicitud - NG Ingeniería en Seguridad",
       html: `
@@ -146,9 +153,10 @@ export async function POST(request: NextRequest) {
         const spreadsheet = await sheets.spreadsheets.get({
           spreadsheetId: process.env.GOOGLE_SHEETS_ID,
         });
-        
-        const sheetName = spreadsheet.data.sheets?.[0]?.properties?.title || 'Sheet1';
-        
+
+        const sheetName =
+          spreadsheet.data.sheets?.[0]?.properties?.title || "Sheet1";
+
         await sheets.spreadsheets.values.append({
           spreadsheetId: process.env.GOOGLE_SHEETS_ID,
           range: `${sheetName}!A:F`,
@@ -173,11 +181,25 @@ export async function POST(request: NextRequest) {
     }
 
     // Send both emails and add to sheets
-    await Promise.all([
-      transporter.sendMail(ownerMailOptions),
-      transporter.sendMail(customerMailOptions),
-      addToGoogleSheets(),
-    ]);
+    console.log("Attempting to send emails...");
+    console.log("From:", process.env.SMPT_MAIL);
+    console.log("Owner email to:", ownerMailOptions.to);
+    console.log("Customer email to:", customerMailOptions.to);
+
+    try {
+      const [ownerResult, customerResult] = await Promise.all([
+        transporter.sendMail(ownerMailOptions),
+        transporter.sendMail(customerMailOptions),
+        addToGoogleSheets(),
+      ]);
+
+      console.log("Owner email sent:", ownerResult.messageId);
+      console.log("Customer email sent:", customerResult.messageId);
+      console.log("Data added to Google Sheets successfully");
+    } catch (emailError) {
+      console.error("Email sending failed:", emailError);
+      throw emailError;
+    }
 
     return NextResponse.json(
       { message: "Mensaje enviado exitosamente" },
