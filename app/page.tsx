@@ -4,6 +4,12 @@ import { ContactForm } from "@/components/contact-form"
 import { Shield, Eye, Bell, Monitor, Smartphone, Award, Wrench, Phone, Mail, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "NG Ingeniería en Seguridad - Soluciones Integrales de Seguridad",
+  description: "Protegemos lo que más importa. Sistemas de seguridad profesionales con tecnología de vanguardia: video vigilancia, alarmas monitoreadas 24/7, monitoreo y mantenimiento especializado.",
+}
 
 export default function SecurityLandingPage() {
   const services = [
@@ -51,33 +57,6 @@ export default function SecurityLandingPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <Image
-              src="/Logo NG-chico-Photoroom.png"
-              alt="NG Ingeniería en Seguridad"
-              width={60}
-              height={60}
-              className="object-contain"
-            />
-            <div>
-              <h1 className="text-xl font-bold text-slate-800">NG Ingeniería en Seguridad</h1>
-              <p className="text-sm text-slate-600">Soluciones Integrales de Seguridad</p>
-            </div>
-          </div>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="#servicios" className="text-slate-700 hover:text-blue-600 transition-colors">
-              Servicios
-            </Link>
-            <Link href="#contacto" className="text-slate-700 hover:text-blue-600 transition-colors">
-              Contacto
-            </Link>
-            <Button className="bg-blue-600 hover:bg-blue-700">Solicitar Cotización</Button>
-          </nav>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-20">
@@ -90,19 +69,13 @@ export default function SecurityLandingPage() {
               Sistemas de seguridad profesionales con tecnología de vanguardia. Instalación, monitoreo y mantenimiento
               especializado.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
-                <Shield className="mr-2 h-5 w-5" />
-                Consulta Gratuita
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-white border-white hover:bg-white hover:text-slate-900 text-lg px-8 py-3 bg-transparent"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                Llamar Ahora
-              </Button>
+            <div className="flex justify-center items-center mb-12">
+              <Link href="#cotizacion">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Consulta Gratuita
+                </Button>
+              </Link>
             </div>
 
             {/* Partnership */}
@@ -155,7 +128,7 @@ export default function SecurityLandingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-slate-100">
+      <section id="cotizacion" className="py-20 bg-slate-100">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -225,60 +198,13 @@ export default function SecurityLandingPage() {
             <div className="bg-slate-800 p-8 rounded-xl">
               <MapPin className="h-12 w-12 text-blue-400 mx-auto mb-4" />
               <h4 className="text-xl font-semibold mb-2">Ubicación</h4>
-              <p className="text-slate-300">Buenos Aires, Argentina</p>
+              <p className="text-slate-300">Las Rosas, Sta. Fe, Argentina</p>
               <p className="text-slate-300">Cobertura Nacional</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-950 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <Image
-                  src="/Logo NG-chico-Photoroom.png"
-                  alt="NG Ingeniería en Seguridad"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-                <h5 className="text-lg font-bold">NG Ingeniería en Seguridad</h5>
-              </div>
-              <p className="text-slate-400">
-                Protegiendo lo que más importa con tecnología de vanguardia y servicio profesional.
-              </p>
-            </div>
-            <div>
-              <h5 className="text-lg font-semibold mb-4">Servicios</h5>
-              <ul className="space-y-2 text-slate-400">
-                <li>Video Vigilancia</li>
-                <li>Sistemas de Alarma</li>
-                <li>Monitoreo 24/7</li>
-                <li>Mantenimiento</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="text-lg font-semibold mb-4">Alianza Estratégica</h5>
-              <div className="flex items-center space-x-3">
-                <Image
-                  src="/logo alarmas gp _chico-Photoroom.png"
-                  alt="GP Alarmas"
-                  width={50}
-                  height={50}
-                  className="object-contain"
-                />
-                <span className="text-slate-400">GP Alarmas</span>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-            <p>&copy; 2024 NG Ingeniería en Seguridad. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
