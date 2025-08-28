@@ -101,8 +101,8 @@ export async function POST(request: NextRequest) {
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; text-align: center;">
             <h4 style="color: #334155; margin-top: 0;">📞 ¿Necesitas contactarnos?</h4>
-            <p style="margin: 5px 0;"><strong>Teléfono:</strong> +54 11 1234-5678</p>
-            <p style="margin: 5px 0;"><strong>Email:</strong> info@ngingenieria.com</p>
+            <p style="margin: 5px 0;"><strong>Teléfono:</strong> +5493471521618 / +5493471594772</p>
+            <p style="margin: 5px 0;"><strong>Email:</strong> info@ng.com.ar</p>
             <p style="margin: 15px 0 0 0; color: #64748b; font-size: 14px;">
               Atención las 24 horas - Cobertura Nacional
             </p>

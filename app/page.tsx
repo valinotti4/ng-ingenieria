@@ -186,14 +186,14 @@ export default function SecurityLandingPage() {
             <div className="bg-slate-800 p-8 rounded-xl">
               <Phone className="h-12 w-12 text-blue-400 mx-auto mb-4" />
               <h4 className="text-xl font-semibold mb-2">Teléfono</h4>
-              <p className="text-slate-300">+54 11 1234-5678</p>
+              <p className="text-slate-300">+5493471521618</p>
+              <p className="text-slate-300">+5493471594772</p>
               <p className="text-slate-300">Atención 24/7</p>
             </div>
             <div className="bg-slate-800 p-8 rounded-xl">
               <Mail className="h-12 w-12 text-blue-400 mx-auto mb-4" />
               <h4 className="text-xl font-semibold mb-2">Email</h4>
-              <p className="text-slate-300">info@ngingenieria.com</p>
-              <p className="text-slate-300">ventas@ngingenieria.com</p>
+              <p className="text-slate-300">info@ng.com.ar</p>
             </div>
             <div className="bg-slate-800 p-8 rounded-xl">
               <MapPin className="h-12 w-12 text-blue-400 mx-auto mb-4" />
