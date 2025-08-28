@@ -14,24 +14,22 @@ export async function POST(request: NextRequest) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMPT_HOST,
-      port: parseInt(process.env.SMPT_PORT || "465"),
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT || "465"),
       secure: true,
       auth: {
-        user: process.env.SMPT_MAIL,
-        pass: process.env.SMPT_APP_PASS,
+        user: process.env.SMTP_MAIL,
+        pass: process.env.SMTP_PASS,
       },
-      authMethod: "PLAIN",
       tls: {
         rejectUnauthorized: false,
-        ciphers: "SSLv3",
       },
     });
 
     // Email to site owners
     const ownerMailOptions = {
-      from: `"NG Ingeniería en Seguridad" <${process.env.SMPT_MAIL}>`,
-      replyTo: process.env.SMPT_MAIL,
+      from: `"NG Ingeniería en Seguridad" <${process.env.SMTP_MAIL}>`,
+      replyTo: process.env.SMTP_MAIL,
       to: "consultas@ng.com.ar",
       subject: `Nueva solicitud de cotización - ${name}`,
       html: `
@@ -65,8 +63,8 @@ export async function POST(request: NextRequest) {
 
     // Email confirmation to customer
     const customerMailOptions = {
-      from: `"NG Ingeniería en Seguridad" <${process.env.SMPT_MAIL}>`,
-      replyTo: process.env.SMPT_MAIL,
+      from: `"NG Ingeniería en Seguridad" <${process.env.SMTP_MAIL}>`,
+      replyTo: process.env.SMTP_MAIL,
       to: email,
       subject: "Confirmación de solicitud - NG Ingeniería en Seguridad",
       html: `
@@ -179,12 +177,6 @@ export async function POST(request: NextRequest) {
         // Don't fail the entire request if sheets fails
       }
     }
-
-    // Send both emails and add to sheets
-    console.log("Attempting to send emails...");
-    console.log("From:", process.env.SMPT_MAIL);
-    console.log("Owner email to:", ownerMailOptions.to);
-    console.log("Customer email to:", customerMailOptions.to);
 
     try {
       const [ownerResult, customerResult] = await Promise.all([
