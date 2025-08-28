@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { ExternalLink } from "lucide-react"
 
 export function Footer() {
   return (
@@ -36,6 +37,12 @@ export function Footer() {
               <li>
                 <Link href="/dolar" className="text-slate-400 hover:text-blue-400 transition-colors">
                   Cotización Dólar
+                </Link>
+              </li>
+              <li>
+                <Link href="https://ng.com.ar/meteo/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center">
+                  DigiMeteo
+                  <ExternalLink className="ml-1 h-3 w-3" />
                 </Link>
               </li>
             </ul>
