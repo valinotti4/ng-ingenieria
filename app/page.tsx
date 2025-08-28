@@ -1,22 +1,35 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ContactForm } from "@/components/contact-form"
-import { Shield, Eye, Bell, Monitor, Smartphone, Award, Wrench, Phone, Mail, MapPin } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import type { Metadata } from "next"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ContactForm } from "@/components/contact-form";
+import {
+  Shield,
+  Eye,
+  Bell,
+  Monitor,
+  Smartphone,
+  Award,
+  Wrench,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "NG Ingeniería en Seguridad - Soluciones Integrales de Seguridad",
-  description: "Protegemos lo que más importa. Sistemas de seguridad profesionales con tecnología de vanguardia: video vigilancia, alarmas monitoreadas 24/7, monitoreo y mantenimiento especializado.",
-}
+  description:
+    "Protegemos lo que más importa. Sistemas de seguridad profesionales con tecnología de vanguardia: video vigilancia, alarmas monitoreadas 24/7, monitoreo y mantenimiento especializado.",
+};
 
 export default function SecurityLandingPage() {
   const services = [
     {
       icon: Eye,
       title: "Video Vigilancia",
-      description: "Utilizamos tecnologías de última generación con cámaras con visión diurna y nocturna",
+      description:
+        "Utilizamos tecnologías de última generación con cámaras con visión diurna y nocturna",
     },
     {
       icon: Bell,
@@ -27,7 +40,8 @@ export default function SecurityLandingPage() {
     {
       icon: Shield,
       title: "Seguridad Electrónica",
-      description: "Aplicación de altos standares de seguridad general de dispositivos y/o sistemas electrónicos",
+      description:
+        "Aplicación de altos standares de seguridad general de dispositivos y/o sistemas electrónicos",
     },
     {
       icon: Monitor,
@@ -53,25 +67,28 @@ export default function SecurityLandingPage() {
       description:
         "Mantenemos los sistemas instalados para que usted pueda estar tranquilo que sus activos están continuamente bien cuidados",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-slate-50">
-
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Protegemos lo que más <span className="text-blue-400">Importa</span>
+              Protegemos lo que más{" "}
+              <span className="text-blue-400">Importa</span>
             </h2>
             <p className="text-xl md:text-2xl mb-8 text-slate-300 leading-relaxed">
-              Sistemas de seguridad profesionales con tecnología de vanguardia. Instalación, monitoreo y mantenimiento
-              especializado.
+              Sistemas de seguridad profesionales con tecnología de vanguardia.
+              Instalación, monitoreo y mantenimiento especializado.
             </p>
             <div className="flex justify-center items-center mb-12">
               <Link href="#cotizacion">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3"
+                >
                   <Mail className="mr-2 h-5 w-5" />
                   Consulta Gratuita
                 </Button>
@@ -83,7 +100,7 @@ export default function SecurityLandingPage() {
               <div className="text-center">
                 <p className="text-sm text-slate-400 mb-3">En alianza con</p>
                 <Image
-                  src="/logo alarmas gp _chico-Photoroom.png"
+                  src="/logo-gp.png"
                   alt="GP Alarmas"
                   width={80}
                   height={80}
@@ -99,29 +116,38 @@ export default function SecurityLandingPage() {
       <section id="servicios" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Nuestros Servicios</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+              Nuestros Servicios
+            </h3>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Ofrecemos soluciones integrales de seguridad con tecnología de última generación y atención personalizada
-              las 24 horas del día.
+              Ofrecemos soluciones integrales de seguridad con tecnología de
+              última generación y atención personalizada las 24 horas del día.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
-              const IconComponent = service.icon
+              const IconComponent = service.icon;
               return (
-                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <Card
+                  key={index}
+                  className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
                   <CardContent className="p-8">
                     <div className="flex items-center mb-4">
                       <div className="bg-blue-100 p-3 rounded-lg mr-4">
                         <IconComponent className="h-6 w-6 text-blue-600" />
                       </div>
-                      <h4 className="text-xl font-bold text-slate-800">{service.title}</h4>
+                      <h4 className="text-xl font-bold text-slate-800">
+                        {service.title}
+                      </h4>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">{service.description}</p>
+                    <p className="text-slate-600 leading-relaxed">
+                      {service.description}
+                    </p>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </div>
@@ -132,16 +158,21 @@ export default function SecurityLandingPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">¿Por qué elegirnos?</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
+                ¿Por qué elegirnos?
+              </h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-green-100 p-2 rounded-full">
                     <Shield className="h-5 w-5 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-800 mb-2">Experiencia Comprobada</h4>
+                    <h4 className="font-semibold text-slate-800 mb-2">
+                      Experiencia Comprobada
+                    </h4>
                     <p className="text-slate-600">
-                      Más de 10 años protegiendo hogares y empresas con tecnología confiable.
+                      Más de 10 años protegiendo hogares y empresas con
+                      tecnología confiable.
                     </p>
                   </div>
                 </div>
@@ -150,9 +181,12 @@ export default function SecurityLandingPage() {
                     <Monitor className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-800 mb-2">Monitoreo 24/7</h4>
+                    <h4 className="font-semibold text-slate-800 mb-2">
+                      Monitoreo 24/7
+                    </h4>
                     <p className="text-slate-600">
-                      Centro de monitoreo especializado con respuesta inmediata ante emergencias.
+                      Centro de monitoreo especializado con respuesta inmediata
+                      ante emergencias.
                     </p>
                   </div>
                 </div>
@@ -161,9 +195,12 @@ export default function SecurityLandingPage() {
                     <Award className="h-5 w-5 text-purple-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-800 mb-2">Garantía Extendida</h4>
+                    <h4 className="font-semibold text-slate-800 mb-2">
+                      Garantía Extendida
+                    </h4>
                     <p className="text-slate-600">
-                      Trabajamos con las mejores marcas y ofrecemos garantía extendida en todos nuestros equipos.
+                      Trabajamos con las mejores marcas y ofrecemos garantía
+                      extendida en todos nuestros equipos.
                     </p>
                   </div>
                 </div>
@@ -179,7 +216,9 @@ export default function SecurityLandingPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">Contáctanos</h3>
-            <p className="text-xl text-slate-300">Estamos listos para proteger tu hogar o empresa</p>
+            <p className="text-xl text-slate-300">
+              Estamos listos para proteger tu hogar o empresa
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -204,7 +243,6 @@ export default function SecurityLandingPage() {
           </div>
         </div>
       </section>
-
     </div>
-  )
+  );
 }

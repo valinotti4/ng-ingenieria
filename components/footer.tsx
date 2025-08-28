@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ExternalLink } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <Image
-                src="/Logo NG-chico-Photoroom.png"
+                src="/logo-ng.png"
                 alt="NG Ingeniería en Seguridad"
                 width={40}
                 height={40}
@@ -19,7 +19,8 @@ export function Footer() {
               <h5 className="text-lg font-bold">NG Ingeniería en Seguridad</h5>
             </div>
             <p className="text-slate-400">
-              Protegiendo lo que más importa con tecnología de vanguardia y servicio profesional.
+              Protegiendo lo que más importa con tecnología de vanguardia y
+              servicio profesional.
             </p>
           </div>
           <div>
@@ -35,12 +36,20 @@ export function Footer() {
             <h5 className="text-lg font-semibold mb-4">Links Útiles</h5>
             <ul className="space-y-2">
               <li>
-                <Link href="/dolar" className="text-slate-400 hover:text-blue-400 transition-colors">
+                <Link
+                  href="/dolar"
+                  className="text-slate-400 hover:text-blue-400 transition-colors"
+                >
                   Cotización Dólar
                 </Link>
               </li>
               <li>
-                <Link href="https://ng.com.ar/meteo/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors flex items-center">
+                <Link
+                  href="https://ng.com.ar/meteo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-blue-400 transition-colors flex items-center"
+                >
                   DigiMeteo
                   <ExternalLink className="ml-1 h-3 w-3" />
                 </Link>
@@ -51,7 +60,7 @@ export function Footer() {
             <h5 className="text-lg font-semibold mb-4">Alianza Estratégica</h5>
             <div className="flex items-center space-x-3">
               <Image
-                src="/logo alarmas gp _chico-Photoroom.png"
+                src="/logo-gp.png"
                 alt="GP Alarmas"
                 width={50}
                 height={50}
@@ -62,9 +71,12 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-          <p>&copy; 2024 NG Ingeniería en Seguridad. Todos los derechos reservados.</p>
+          <p>
+            &copy; 2024 NG Ingeniería en Seguridad. Todos los derechos
+            reservados.
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

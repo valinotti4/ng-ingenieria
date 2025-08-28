@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "NG Ingeniería en Seguridad",
   description: "Soluciones integrales de seguridad con tecnología de vanguardia. Video vigilancia, sistemas de alarma, monitoreo 24/7 y mantenimiento especializado.",
+  icons: {
+    icon: "/ng.svg",
+  },
 };
 
 export default function RootLayout({
