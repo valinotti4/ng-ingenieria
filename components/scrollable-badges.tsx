@@ -35,7 +35,7 @@ export function ScrollableBadges() {
     }
   };
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleScroll = () => {
     updateGradients();
   };
 
