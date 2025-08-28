@@ -81,7 +81,6 @@ export default function SecurityLandingPage() {
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-5xl mx-auto">
-
             <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight">
               <span className="text-white">Seguridad </span>
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
@@ -228,7 +227,7 @@ export default function SecurityLandingPage() {
                       Experiencia Comprobada
                     </h4>
                     <p className="text-slate-600">
-                      Más de 10 años protegiendo hogares y empresas con
+                      Más de 20 años protegiendo hogares y empresas con
                       tecnología confiable.
                     </p>
                   </div>

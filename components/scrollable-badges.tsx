@@ -87,7 +87,7 @@ export function ScrollableBadges() {
             <div className="bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 px-4 py-2 rounded-full flex items-center gap-2 flex-shrink-0">
               <Award className="h-4 w-4 text-purple-400" />
               <span className="text-purple-300 text-sm font-medium whitespace-nowrap">
-                +10 años
+                +20 años
               </span>
             </div>
           </div>
