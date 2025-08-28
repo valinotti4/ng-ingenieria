@@ -80,27 +80,6 @@ export default function SecurityLandingPage() {
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-5xl mx-auto">
-            {/* Security badges */}
-            <div className="flex justify-center items-center gap-4 mb-8">
-              <div className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 px-4 py-2 rounded-full flex items-center gap-2">
-                <Shield className="h-4 w-4 text-green-400" />
-                <span className="text-green-300 text-sm font-medium">
-                  Certificado
-                </span>
-              </div>
-              <div className="bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 px-4 py-2 rounded-full flex items-center gap-2">
-                <Monitor className="h-4 w-4 text-blue-400" />
-                <span className="text-blue-300 text-sm font-medium">
-                  24/7 Monitoreo
-                </span>
-              </div>
-              <div className="bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 px-4 py-2 rounded-full flex items-center gap-2">
-                <Award className="h-4 w-4 text-purple-400" />
-                <span className="text-purple-300 text-sm font-medium">
-                  +10 años
-                </span>
-              </div>
-            </div>
 
             <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight">
               <span className="text-white">Seguridad </span>
@@ -112,7 +91,7 @@ export default function SecurityLandingPage() {
               <span className="text-blue-400">Tranquilidad</span>
             </h1>
 
-            <p className="text-xl md:text-2xl mb-10 text-slate-200 leading-relaxed max-w-4xl mx-auto font-light">
+            <p className="text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed max-w-4xl mx-auto font-light">
               Tecnología de vanguardia en sistemas de seguridad electrónica.
               <span className="text-cyan-300 font-semibold">
                 {" "}
@@ -120,6 +99,32 @@ export default function SecurityLandingPage() {
               </span>{" "}
               con respuesta inmediata y monitoreo profesional las 24 horas.
             </p>
+
+            {/* Security badges - scrollable on mobile */}
+            <div className="mb-10">
+              <div className="overflow-x-auto scrollbar-hide">
+                <div className="flex justify-center items-center gap-3 min-w-max px-4">
+                  <div className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 px-4 py-2 rounded-full flex items-center gap-2 flex-shrink-0">
+                    <Shield className="h-4 w-4 text-green-400" />
+                    <span className="text-green-300 text-sm font-medium whitespace-nowrap">
+                      Certificado
+                    </span>
+                  </div>
+                  <div className="bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 px-4 py-2 rounded-full flex items-center gap-2 flex-shrink-0">
+                    <Monitor className="h-4 w-4 text-blue-400" />
+                    <span className="text-blue-300 text-sm font-medium whitespace-nowrap">
+                      24/7 Monitoreo
+                    </span>
+                  </div>
+                  <div className="bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 px-4 py-2 rounded-full flex items-center gap-2 flex-shrink-0">
+                    <Award className="h-4 w-4 text-purple-400" />
+                    <span className="text-purple-300 text-sm font-medium whitespace-nowrap">
+                      +10 años
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* Key features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
@@ -179,10 +184,10 @@ export default function SecurityLandingPage() {
         </div>
 
         {/* Floating security elements */}
-        <div className="absolute top-20 left-10 opacity-20 animate-pulse">
+        <div className="absolute top-20 left-10 opacity-20 animate-pulse  sm:block hidden">
           <Shield className="h-16 w-16 text-blue-400" />
         </div>
-        <div className="absolute bottom-20 right-10 opacity-20 animate-pulse delay-1000">
+        <div className="absolute bottom-20 right-10 opacity-20 animate-pulse delay-1000  sm:block hidden">
           <Monitor className="h-12 w-12 text-cyan-400" />
         </div>
       </section>
