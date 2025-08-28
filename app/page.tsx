@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ContactForm } from "@/components/contact-form";
+import { ScrollableBadges } from "@/components/scrollable-badges";
 import {
   Shield,
   Eye,
@@ -100,31 +101,7 @@ export default function SecurityLandingPage() {
               con respuesta inmediata y monitoreo profesional las 24 horas.
             </p>
 
-            {/* Security badges - scrollable on mobile */}
-            <div className="mb-10">
-              <div className="overflow-x-auto scrollbar-hide">
-                <div className="flex justify-center items-center gap-3 min-w-max px-4">
-                  <div className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 px-4 py-2 rounded-full flex items-center gap-2 flex-shrink-0">
-                    <Shield className="h-4 w-4 text-green-400" />
-                    <span className="text-green-300 text-sm font-medium whitespace-nowrap">
-                      Certificado
-                    </span>
-                  </div>
-                  <div className="bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 px-4 py-2 rounded-full flex items-center gap-2 flex-shrink-0">
-                    <Monitor className="h-4 w-4 text-blue-400" />
-                    <span className="text-blue-300 text-sm font-medium whitespace-nowrap">
-                      24/7 Monitoreo
-                    </span>
-                  </div>
-                  <div className="bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 px-4 py-2 rounded-full flex items-center gap-2 flex-shrink-0">
-                    <Award className="h-4 w-4 text-purple-400" />
-                    <span className="text-purple-300 text-sm font-medium whitespace-nowrap">
-                      +10 años
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ScrollableBadges />
 
             {/* Key features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
