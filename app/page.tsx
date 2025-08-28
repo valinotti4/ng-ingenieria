@@ -72,43 +72,118 @@ export default function SecurityLandingPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Protegemos lo que más{" "}
-              <span className="text-blue-400">Importa</span>
-            </h2>
-            <p className="text-xl md:text-2xl mb-8 text-slate-300 leading-relaxed">
-              Sistemas de seguridad profesionales con tecnología de vanguardia.
-              Instalación, monitoreo y mantenimiento especializado.
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white py-24 overflow-hidden">
+        {/* Background tech pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPgo8L3N2Zz4=')] opacity-20"></div>
+        </div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-5xl mx-auto">
+            {/* Security badges */}
+            <div className="flex justify-center items-center gap-4 mb-8">
+              <div className="bg-green-500/20 backdrop-blur-sm border border-green-400/30 px-4 py-2 rounded-full flex items-center gap-2">
+                <Shield className="h-4 w-4 text-green-400" />
+                <span className="text-green-300 text-sm font-medium">
+                  Certificado
+                </span>
+              </div>
+              <div className="bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 px-4 py-2 rounded-full flex items-center gap-2">
+                <Monitor className="h-4 w-4 text-blue-400" />
+                <span className="text-blue-300 text-sm font-medium">
+                  24/7 Monitoreo
+                </span>
+              </div>
+              <div className="bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 px-4 py-2 rounded-full flex items-center gap-2">
+                <Award className="h-4 w-4 text-purple-400" />
+                <span className="text-purple-300 text-sm font-medium">
+                  +10 años
+                </span>
+              </div>
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight">
+              <span className="text-white">Seguridad </span>
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Inteligente
+              </span>
+              <br />
+              <span className="text-white">para su </span>
+              <span className="text-blue-400">Tranquilidad</span>
+            </h1>
+
+            <p className="text-xl md:text-2xl mb-10 text-slate-200 leading-relaxed max-w-4xl mx-auto font-light">
+              Tecnología de vanguardia en sistemas de seguridad electrónica.
+              <span className="text-cyan-300 font-semibold">
+                {" "}
+                Protección inteligente
+              </span>{" "}
+              con respuesta inmediata y monitoreo profesional las 24 horas.
             </p>
-            <div className="flex justify-center items-center mb-12">
+
+            {/* Key features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                <Eye className="h-8 w-8 text-cyan-400 mx-auto mb-3" />
+                <h3 className="font-bold text-white mb-2">Visión HD</h3>
+                <p className="text-slate-300 text-sm">
+                  Cámaras 4K con IA integrada
+                </p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                <Bell className="h-8 w-8 text-cyan-400 mx-auto mb-3" />
+                <h3 className="font-bold text-white mb-2">
+                  Respuesta Inmediata
+                </h3>
+                <p className="text-slate-300 text-sm">
+                  Alertas instantáneas y verificadas
+                </p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                <Smartphone className="h-8 w-8 text-cyan-400 mx-auto mb-3" />
+                <h3 className="font-bold text-white mb-2">Control Total</h3>
+                <p className="text-slate-300 text-sm">
+                  App móvil con control remoto
+                </p>
+              </div>
+            </div>
+
+            <div className="flex justify-center items-center mb-16">
               <Link href="#cotizacion">
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-lg px-10 py-4 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold border-0"
                 >
-                  <Mail className="mr-2 h-5 w-5" />
-                  Consulta Gratuita
+                  <Mail className="mr-3 h-6 w-6" />
+                  Consulta Gratuita Ahora
                 </Button>
               </Link>
             </div>
 
             {/* Partnership */}
-            <div className="flex items-center justify-center space-x-8 pt-8 border-t border-slate-700">
+            <div className="flex items-center justify-center pt-8 border-t border-slate-600/50">
               <div className="text-center">
-                <p className="text-sm text-slate-400 mb-3">En alianza con</p>
+                <p className="text-sm text-slate-400 mb-3">
+                  Partner Tecnológico Oficial
+                </p>
                 <Image
                   src="/logo-gp.png"
                   alt="GP Alarmas"
-                  width={80}
-                  height={80}
-                  className="object-contain mx-auto"
+                  width={100}
+                  height={100}
+                  className="object-contain mx-auto filter brightness-110"
                 />
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Floating security elements */}
+        <div className="absolute top-20 left-10 opacity-20 animate-pulse">
+          <Shield className="h-16 w-16 text-blue-400" />
+        </div>
+        <div className="absolute bottom-20 right-10 opacity-20 animate-pulse delay-1000">
+          <Monitor className="h-12 w-12 text-cyan-400" />
         </div>
       </section>
 
